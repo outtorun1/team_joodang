@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @SpringBootTest
 public class MemberRepositoryTest {
     @Autowired
@@ -27,6 +31,7 @@ public class MemberRepositoryTest {
         member.setRegion("서울특별시");
         member.setGender(Gender.MALE);
         member.setPhone("010-1234-5678");
+        member.setJoinDate(new Date());
         member.setRole(Role.HQ);
 
         Member savedMember = memberRepository.save(member);

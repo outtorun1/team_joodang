@@ -9,7 +9,9 @@ import lombok.ToString;
 import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "members")
@@ -32,8 +34,9 @@ public class Member {
     private String address1;
     private String address2;
 
+    // columnDefinition = "date default sysdate"
     @Column(nullable = false, columnDefinition = "date default sysdate")
-    private LocalDateTime joinDate;
+    private Date joinDate;
 
     @Column(nullable = false)
     private int coupon;
